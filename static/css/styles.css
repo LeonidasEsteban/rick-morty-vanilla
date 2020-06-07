@@ -12,34 +12,69 @@ body {
 
 .grid {
   display: grid;
-  height: 100vh;
+  height: calc(100vh - 8em);
   padding: 4em;
   grid-template-columns: 50px 1fr 1fr 200px;
-  grid-template-rows: 312px 100px 1fr 1fr;
+  grid-template-rows: 230px 100px 1fr 1fr 1fr;
   grid-column-gap: 8em;
-  grid-template-areas: "asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom learn-more arrow other-line";
+  grid-template-areas: "asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom character-text avatar avatar" "asset-bottom learn-more arrow other-line" ;
 }
-
-.asset.top {
-  grid-area: asset-top;
-  writing-mode: vertical-rl;
+.character-image-container {
+  grid-area: avatar;
   border: 1px solid red;
   display: flex;
+  justify-content: center;
   align-items: center;
-  /* margin-inline-start: 4em; */
 }
-
-.navigation-name {
-  grid-area: name;
+.arrow {
+  grid-area: arrow;
+  border: 1px solid red;
+  background-image: url('../images/arrow.svg');
+  background-repeat: no-repeat;
+  background-position: left  bottom ;
+}
+.learn-more {
+  grid-area: learn-more;
+  border: 1px solid red;
+  display: flex;
+  align-items: flex-end;
+  font-size: 25px;
+  text-transform: uppercase;
+  background-image: url('../images/learn-more.svg');
+  background-repeat: no-repeat;
+  background-position: left 170px bottom 5px;
+}
+.asset.top {
+  grid-area: asset-top;
+  border: 1px solid red;
+}
+.asset {
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+}
+.asset.bottom {
+  grid-area: asset-bottom;
+  border: 1px solid green;
+  justify-content: flex-end;
+}
+.navigation {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   display: flex;
   align-items: center;
-  border: 1px solid purple;
   justify-content: center;
 }
+.navigation.name {
+  grid-area: name;
+  border: 1px solid purple;
+}
+.navigation.about {
+  grid-area: about;
+  border: 1px solid purple;
+}
 
-.navigation-name a {
+.navigation a {
   text-decoration: none;
   color: black;
   font-size: 25px;
@@ -58,8 +93,11 @@ body {
   /* padding-inline-start: 1em; */
 }
 
-.navigation {
-  /* transform-origin: left bottom; */
+.character-description-container {
+  grid-area: character-description;
+}
+
+/* .navigation {
   transform: rotate(180deg);
   writing-mode: vertical-rl;
   position: absolute;
@@ -73,7 +111,7 @@ body {
   justify-content: space-between;
   padding-inline: 4em;
   display: none;
-}
+} */
 
 .navigation .text {
   display: inline-flex;
