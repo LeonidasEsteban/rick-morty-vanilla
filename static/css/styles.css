@@ -5,19 +5,69 @@ body {
 }
 
 .logo {
+  grid-area: logo;
   margin: 0 auto 2em;
   display: block;
 }
 
+.grid {
+  display: grid;
+  height: 100vh;
+  padding: 4em;
+  grid-template-columns: 50px 1fr 1fr 200px;
+  grid-template-rows: 312px 1fr 1fr 1fr;
+  grid-template-areas: "asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom learn-more arrow other-line";
+}
+
+.asset.top {
+  grid-area: asset-top;
+  writing-mode: vertical-rl;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  /* margin-inline-start: 4em; */
+}
+
+.navigation-name {
+  grid-area: name;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: center;
+}
+
+.navigation-name a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.social {
+  grid-area: social;
+  border: 1px solid red;
+}
+
 .navigation {
-  transform-origin: left bottom;
-  transform: rotate(-90deg);
+  /* transform-origin: left bottom; */
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
   position: absolute;
-  left: 4em;
-  width: 100vh;
+  left: 2em;
+  height: calc(100vh - 8em);
   bottom: 0;
   text-align: center;
   border: 1px solid red;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4em;
+  display: none;
+}
+
+.navigation .text {
+  display: inline-flex;
+  margin-inline: 35px;
 }
 
 .dot {
@@ -26,6 +76,18 @@ body {
   background: black;
   border-radius: 50%;
   display: inline-flex;
+  margin-inline: 5px;
+}
+
+.links {
+}
+
+.line {
+  width: 2px;
+  height: 150px;
+  background: black;
+  display: inline-flex;
+  margin-inline: 15px;
 }
 
 .wrapper {
