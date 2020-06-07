@@ -2,7 +2,7 @@ body {
   margin: 0;
   background: #00a5be;
   font-family: system-ui;
-  overflow: hidden;
+  overflow-x: hidden;
   background-image: url('../images/asset-red.svg');
   background-position: left 200px top;
   background-repeat: no-repeat;
@@ -189,21 +189,29 @@ body {
   top: 50%;
 }
 
-
-.character-name-placeholder {
-  color: rgba(0,0,0,.1);
-  font-size: 600px;
-  position: absolute;
+.placeholder-container {
+  /* max-width: 100vw; */
+  overflow: hidden;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
+}
+.character-name-placeholder {
+  color: rgba(0,0,0,.1);
+  font-size: 600px;
   text-transform: uppercase;
   justify-content: center;
   display: flex;
   align-items: center;
   z-index: 1;
   white-space: nowrap;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
 }
 @media screen and (max-width: 1440px) {
   .grid {
@@ -231,6 +239,10 @@ body {
   }
   .character-name {
     text-align: center;
+  }
+  .character-name h2:after {
+    left: 0;
+    top: calc(100% - 20px);
   }
 
   .character-name-container{
