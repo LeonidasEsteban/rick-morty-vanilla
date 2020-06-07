@@ -2,6 +2,7 @@ body {
   margin: 0;
   background: #00a5be;
   font-family: system-ui;
+  overflow: hidden;
 }
 
 .logo {
@@ -11,6 +12,8 @@ body {
 }
 
 .grid {
+  position: relative;
+  z-index: 2;
   display: grid;
   height: calc(100vh - 8em);
   padding: 4em;
@@ -215,6 +218,21 @@ body {
 
 } */
 
+.character-name-placeholder {
+  color: rgba(0,0,0,.1);
+  font-size: 600px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  text-transform: uppercase;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  white-space: nowrap;
+}
 @media screen and (max-width: 1440px) {
   .grid {
     column-gap: 2em;
@@ -255,6 +273,7 @@ body {
     /* padding-inline-start: 1em; */
   }
   .arrow {
+    user-select: none;
     height: 50px;
     background-position: center;
   }
