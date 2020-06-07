@@ -3,6 +3,9 @@ body {
   background: #00a5be;
   font-family: system-ui;
   overflow: hidden;
+  background-image: url('../images/asset-red.svg');
+  background-position: left 200px top;
+  background-repeat: no-repeat;
 }
 
 .logo {
@@ -172,51 +175,20 @@ body {
   /* display: inline-flex; */
 }
 .character-name {
-
+  position: relative;
   font-size: 30px;
 }
+.character-name h2:after {
+  content: "";
+  width: 87px;
+  height: 6px;
+  background-color: #F7391C;
+  display: inline-flex;
+  position: absolute;
+  left: calc(100% + 5px);
+  top: 50%;
+}
 
-/*
-@media screen and (min-width: 1024px) {
-  .character-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "name image" "labels image";
-  }
-
-  .character-image {
-    grid-area: name;
-    width: 300px;
-    border-radius: 50%;
-  }
-  .character-name {
-    text-align: left;
-  }
-  .character-name h2 {
-    font-size: 50px;
-    position: relative;
-    display: inline-flex;
-  }
-  .character-name h2:after {
-    content: "";
-    width: 87px;
-    height: 6px;
-    background-color: #F7391C;
-    display: inline-flex;
-    position: absolute;
-    left: calc(100% + 5px);
-    top: 50%;
-  }
-  .character-labels {
-    grid-area: labels;
-    max-width: 300px;
-  }
-
-  .character-image {
-    grid-area: image;
-  }
-
-} */
 
 .character-name-placeholder {
   color: rgba(0,0,0,.1);
@@ -240,6 +212,9 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+  body {
+    background-position: left 50px top;
+  }
   .grid {
     height: auto;
     padding: 2em 0;
@@ -257,6 +232,7 @@ body {
   .character-name {
     text-align: center;
   }
+
   .character-name-container{
     margin-top: 1em;
     justify-content: center;
